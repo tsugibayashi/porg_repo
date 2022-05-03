@@ -8,6 +8,7 @@ name=st
 version=0.8.5
 source1=$name-$version.tar.gz
 source2=st.desktop
+source3=st.wrapper
 patch1=terminfo.patch
 config1=config.h
 URL1=http://dl.suckless.org/st/$name-$version.tar.gz
@@ -18,6 +19,10 @@ if [ ! -f $source1 ]; then
 fi
 if [ ! -f $source2 ]; then
 	echo '[Error] not found '$source2
+	exit 1
+fi
+if [ ! -f $source3 ]; then
+	echo '[Error] not found '$source3
 	exit 1
 fi
 if [ ! -f $patch1 ]; then
@@ -48,4 +53,11 @@ sudo porg -lp $name-$version \
 	'make PREFIX=/usr MANPREFIX=/usr/share/man install'
 sudo porg -lp+ $name-$version \
 	"cp -p ../$source2 /usr/share/applications/"
+sudo porg -lp+ $name-$version \
+	"install -m 755 ../$source3 /usr/bin/$source3"
+
+# Add st.wrapper to x-terminal-emulator
+if [ -f /usr/bin/update-alternatives ]; then
+    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/st.wrapper 10
+fi
 
