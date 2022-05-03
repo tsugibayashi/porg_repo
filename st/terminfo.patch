@@ -1,0 +1,11 @@
+--- st-0.8.5.org/Makefile	2022-01-07 20:41:35.000000000 +0900
++++ st-0.8.5/Makefile	2022-05-03 11:20:46.742057892 +0900
+@@ -47,7 +47,7 @@
+ 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
+ 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
+ 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
+-	tic -sx st.info
++	gzip $(DESTDIR)$(MANPREFIX)/man1/st.1
+ 	@echo Please see the README file regarding the terminfo entry of st.
+ 
+ uninstall:
