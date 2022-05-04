@@ -18,5 +18,5 @@ fi
 
 ### install
 cd $name-$version
-sudo porg -lp $name-$version 'install -m755 -D munsell.py /usr/bin/munsell.py'
+sudo porg -lp $name-$version 'install -m755 munsell.py /usr/bin/munsell.py'
 
