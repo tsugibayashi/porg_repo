@@ -5,7 +5,7 @@
 
 ### variables ###
 name=dwm
-version=6.2
+version=6.3
 source1=$name-$version.tar.gz
 source2=dwm.desktop
 patch1=dwm-systray-$version.diff
