@@ -11,11 +11,11 @@ source2=st.desktop
 source3=st.wrapper
 patch1=terminfo.patch
 config1=config.h
-URL1=http://dl.suckless.org/st/$name-$version.tar.gz
+URL_source1=http://dl.suckless.org/st/$name-$version.tar.gz
 
 ### main routine ###
 if [ ! -f $source1 ]; then
-	wget $URL1
+	wget $URL_source1
 fi
 if [ ! -f $source2 ]; then
 	echo '[Error] not found '$source2
