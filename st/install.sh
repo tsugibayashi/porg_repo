@@ -46,6 +46,14 @@ patch --directory=$name-$version --strip=1 < $patch1
 cp $config1 $name-$version/
 
 cd $name-$version
+
+# change c99 to cc in config.mk
+DISTRO=`lsb_release -a | grep ^Distributor | gawk '{print($3)}'`
+if [ $DISTRO = "Solus" ]; then
+    sed -i 's/^# CC = c99$/CC = cc/' config.mk
+fi
+
+# build
 make
 
 # install
