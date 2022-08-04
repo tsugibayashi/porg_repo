@@ -5,7 +5,7 @@
 
 ### variables ###
 name=fonts-joypixels
-version=6.6.0
+version=7.0.0
 source=joypixels-android.ttf
 URL=https://cdn.joypixels.com/arch-linux/font/${version}/${source}
 
