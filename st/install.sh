@@ -5,7 +5,7 @@
 
 ### variables ###
 name=st
-version=0.8.5
+version=0.9
 source1=$name-$version.tar.gz
 source2=st.desktop
 source3=st.wrapper
