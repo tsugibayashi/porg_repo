@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # Description: A dwm statusbar implemented in Python
 # URL:         https://github.com/tsugibayashi/dwm_statusbar.py
-# Depends on:  dwm x11-xserver-utils python3-psutil python3-mpd
+# Depends on:  xsetroot dwm x11-xserver-utils python3-psutil python3-mpd
 
 ### variables ###
 name=dwm_statusbar
