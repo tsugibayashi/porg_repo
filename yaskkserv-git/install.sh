@@ -7,7 +7,9 @@
 ### functions ###
 function prepare() {
     local username=`whoami`
-    cp -p -v $source2 $source2.bak
+    if [ ! -f $source2.bak ]; then
+        cp -p -v $source2 $source2.bak
+    fi
     sed -i "s/nobody$/$username/" $source2
 }
 
@@ -36,7 +38,7 @@ git checkout $commit_hash1
 
 # build
 LC_ALL=C ./configure --prefix=/usr --enable-google-japanese-input \
-	--disable-gnutls --enable-openssl
+        --enable-google-suggest --disable-gnutls --enable-openssl
 make
 
 # create the dictionary for yaskkserv

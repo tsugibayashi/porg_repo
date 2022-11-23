@@ -7,8 +7,23 @@ Porg (formerly known as paco), is a program to aid management of software packag
 
 [Ubuntu]
 
+Install porg with apt.
+
 ```
 $ sudo apt install porg
+```
+
+[Fedora]
+
+Install porg-0.10 manually.
+
+```
+$ wget http://downloads.sourceforge.net/porg/porg-0.10.tar.gz
+$ tar zxvf porg-0.10.tar.gz
+$ cd porg-0.10
+$ ./configure --prefix=/usr/local --sysconfdir=/etc --disable-grop
+$ make
+$ sudo make install
 ```
 
 ### References
