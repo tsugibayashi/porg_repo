@@ -1,11 +1,11 @@
 #!/bin/bash
 # Description: An easy to use, powerful, and reliable system to process and distribute data.
 # URL:         https://nifi.apache.org/
-# Depends on: default-jre
+# Depends on: java-11-openjdk
 
 ### variables ###
 name=nifi
-version=1.17.0
+version=1.19.0
 source1=$name-$version-bin.zip
 source2=nifi.service
 source3=nifi.install
