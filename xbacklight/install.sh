@@ -1,7 +1,7 @@
 #!/bin/bash
 # Description:	RandR-based backlight control application
 # URL:		https://xorg.freedesktop.org/
-# Depends on:
+# Depends on:   xcb-util-devel
 
 ### variables ###
 name=xbacklight
