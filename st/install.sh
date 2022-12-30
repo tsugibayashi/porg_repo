@@ -49,7 +49,7 @@ cd $name-$version
 
 # change c99 to cc in config.mk
 DISTRO=`lsb_release -a | grep ^Distributor | gawk '{print($3)}'`
-if [ $DISTRO = "Solus" ]; then
+if [ $DISTRO = "Solus" -o $DISTRO = "openSUSE" ]; then
     sed -i 's/^# CC = c99$/CC = cc/' config.mk
 fi
 
