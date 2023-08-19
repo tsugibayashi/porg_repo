@@ -5,7 +5,7 @@
 
 ### variables ###
 name=python-mpd2
-version=3.0.5
+version=3.1.0
 URL1=https://github.com/Mic92/$name.git
 
 ### main routine ###
