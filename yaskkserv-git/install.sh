@@ -42,11 +42,20 @@ LC_ALL=C ./configure --prefix=/usr --enable-google-japanese-input \
 make
 
 # create the dictionary for yaskkserv
-if [ ! -f /usr/share/skk/SKK-JISYO.L ]; then
-    echo '[Error] file not found: /usr/share/skk/SKK-JISYO.L'
+for i in /usr/share/skk/SKK-JISYO.L \
+         /var/lib/flatpak/runtime/org.fcitx.Fcitx5.Addon.Skk/x86_64/master/active/files/share/skk/SKK-JISYO.L; do
+    if [ -f $i ]; then
+        echo '[Info] SKK-JISYO.L is found: '$i
+        SKK_JISYO_L=$i
+        break
+    fi
+done
+if [ ! ${SKK_JISYO_L} ]; then
+    echo '[Error] file not found: SKK-JISYO.L'
     exit 1
 fi
-var/bsd_cygwin_linux_gcc/release/yaskkserv_make_dictionary/yaskkserv_make_dictionary /usr/share/skk/SKK-JISYO.L SKK-JISYO.L.yaskkserv
+
+var/bsd_cygwin_linux_gcc/release/yaskkserv_make_dictionary/yaskkserv_make_dictionary ${SKK_JISYO_L} SKK-JISYO.L.yaskkserv
 
 # install
 sudo porg -lp $name-$version \
@@ -58,6 +67,9 @@ sudo porg -lp+ $name-$version \
 sudo porg -lp+ $name-$version \
 	'install -m 755 var/bsd_cygwin_linux_gcc/release/yaskkserv_hairy/yaskkserv_hairy /usr/bin/yaskkserv_hairy'
 
+if [ ! -d /usr/share/skk ]; then
+    sudo porg -lp+ $name-$version 'install -d -m 755 /usr/share/skk/'
+fi
 sudo porg -lp+ $name-$version 'install -m 644 SKK-JISYO.L.yaskkserv /usr/share/skk/'
 
 sudo porg -lp+ $name-$version "install -m 644 ../${source2} /usr/lib/systemd/system/"
