@@ -5,9 +5,9 @@
 
 ### variables ###
 name=fonts-apple-emoji
-version=15.4
+version=16.4-patch.1
 source=AppleColorEmoji.ttf
-URL=https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-${version}/${source}
+URL=https://github.com/samuelngs/apple-emoji-linux/releases/download/v${version}/${source}
 
 ### main routine ###
 if [ ! -f $source ]; then
