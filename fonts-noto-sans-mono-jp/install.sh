@@ -21,8 +21,8 @@ unzip $source1 -d $name-$version
 # install
 cd $name-$version
 sudo porg -lp $name-$version 'install -d -m 755 /usr/share/fonts/truetype/'
-sudo porg -lp+ $name-$version 'cp -p NotoSansMonoCJKjp-Bold.otf /usr/share/fonts/truetype/'
-sudo porg -lp+ $name-$version 'cp -p NotoSansMonoCJKjp-Regular.otf /usr/share/fonts/truetype/'
+sudo porg -lp+ $name-$version 'install -m 644 NotoSansMonoCJKjp-Bold.otf /usr/share/fonts/truetype/'
+sudo porg -lp+ $name-$version 'install -m 644 NotoSansMonoCJKjp-Regular.otf /usr/share/fonts/truetype/'
 
 sudo fc-cache /usr/share/fonts/truetype/
 #sudo mkfontscale /usr/share/fonts/truetype/

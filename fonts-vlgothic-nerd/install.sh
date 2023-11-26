@@ -17,7 +17,7 @@ fi
 
 # install
 sudo porg -lp $name-$version 'install -d -m 755 /usr/share/fonts/truetype/vlgothic/'
-sudo porg -lp+ $name-$version 'cp -p *.ttf /usr/share/fonts/truetype/vlgothic/'
+sudo porg -lp+ $name-$version 'install -m 644 *.ttf /usr/share/fonts/truetype/vlgothic/'
 
 sudo fc-cache /usr/share/fonts/truetype/vlgothic/
 #sudo mkfontscale /usr/share/fonts/truetype/vlgothic/

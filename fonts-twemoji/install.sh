@@ -29,7 +29,7 @@ cd -
 
 # install
 sudo porg -lp $name-$version 'install -d -m 755 /usr/share/fonts/truetype/twemoji/'
-sudo porg -lp+ $name-$version 'cp -p '${name}-${version}'/usr/share/fonts/twemoji/Twemoji.ttf /usr/share/fonts/truetype/twemoji/'
+sudo porg -lp+ $name-$version 'install -m 644 '${name}-${version}'/usr/share/fonts/twemoji/Twemoji.ttf /usr/share/fonts/truetype/twemoji/'
 sudo porg -lp+ $name-$version 'install -Dm644 '${source2}' /usr/share/fontconfig/conf.avail/'${source2}
 
 sudo fc-cache /usr/share/fonts/truetype/twemoji/

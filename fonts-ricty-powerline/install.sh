@@ -23,7 +23,7 @@ tar zxvf $source1
 # install
 cd RictyDiminished-for-Powerline-${version}-powerline-early-2016/powerline-fontpatched/
 sudo porg -lp $name-$version 'install -d -m 755 /usr/share/fonts/truetype/ricty-powerline/'
-sudo porg -lp+ $name-$version 'cp -p *.ttf /usr/share/fonts/truetype/ricty-powerline/'
+sudo porg -lp+ $name-$version 'install -m 644 *.ttf /usr/share/fonts/truetype/ricty-powerline/'
 
 sudo fc-cache /usr/share/fonts/truetype/ricty-powerline/
 
