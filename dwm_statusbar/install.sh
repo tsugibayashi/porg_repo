@@ -5,7 +5,7 @@
 
 ### variables ###
 name=dwm_statusbar
-version=20231202
+version=20231203
 URL1=https://github.com/tsugibayashi/${name}.py.git
 
 ### main routine ###
