@@ -1,12 +1,12 @@
 #!/bin/bash -e
 # Description: A dwm statusbar implemented in Python
-# URL:         https://github.com/tsugibayashi/dwm_statusbar.py
+# URL:         https://github.com/tsugibayashi/dwm_statusbar
 # Depends on:  xsetroot dwm x11-xserver-utils python3-psutil python3-mpd python3-alsaaudio
 
 ### variables ###
 name=dwm_statusbar
 version=20231203
-URL1=https://github.com/tsugibayashi/${name}.py.git
+URL1=https://github.com/tsugibayashi/${name}.git
 
 ### main routine ###
 if [ -d $name-$version ]; then
