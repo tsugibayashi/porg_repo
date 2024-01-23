@@ -18,5 +18,5 @@ fi
 
 ### install
 cd $name-$version
-sudo porg -lp $name-$version 'install -m755 dwm_statusbar.py /usr/bin/dwm_statusbar.py'
+sudo porg -lp $name-$version 'install -m755 dwmstatusbar.py /usr/bin/dwmstatusbar.py'
 
