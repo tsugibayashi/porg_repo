@@ -7,7 +7,7 @@
 name=screenshot
 version=20220103
 source1=${version}.tar.gz
-URL1=https://github.com/tsugibayashi/screenshot/archive/refs/tags/${source1}
+URL1=https://github.com/tsugibayashi/${name}/archive/refs/tags/${source1}
 
 ### main routine ###
 if [ ! -f $source1 ]; then
