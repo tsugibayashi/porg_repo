@@ -1,5 +1,5 @@
 #!/bin/bash -e
-# Description: A dwm statusbar implemented in Python
+# Description: A dwm statusbar implemented with Python
 # URL:         https://github.com/tsugibayashi/dwm_statusbar
 # Depends on:  xsetroot dwm x11-xserver-utils python3-psutil python3-mpd python3-alsaaudio
 

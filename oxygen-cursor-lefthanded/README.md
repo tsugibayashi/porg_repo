@@ -1,6 +1,6 @@
 # How to install
 
-Download 165028-OxygenWhiteLH.tgz from http://gnome-look.org/content/show.php?action=content&content=165028
+Download 165028-OxygenWhiteLH.tgz from https://www.mate-look.org/p/999652
 
 ```
 $ git clone https://github.com/tsugibayashi/porg_repo.git porg

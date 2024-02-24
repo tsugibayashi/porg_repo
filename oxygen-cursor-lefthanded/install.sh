@@ -1,6 +1,6 @@
 #!/bin/bash
 # Description: Oxygen White Left Handed
-# URL: http://gnome-look.org/content/show.php?action=content&content=165028
+# URL: https://www.mate-look.org/p/999652
 
 ### variables ###
 name=oxygen-cursor-lefthanded
