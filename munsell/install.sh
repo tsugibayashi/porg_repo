@@ -5,16 +5,19 @@
 
 ### variables ###
 name=munsell
-version=1
-URL1=https://github.com/tsugibayashi/$name.git
+version=20220306
+source1=${version}.tar.gz
+URL1=https://github.com/tsugibayashi/${name}/archive/refs/tags/${source1}
 
 ### main routine ###
+if [ ! -f $source1 ]; then
+    wget $URL1
+fi
+
 if [ -d $name-$version ]; then
     rm -rf $name-$version
 fi
-if [ ! -d $name-$version ]; then
-    git clone $URL1 $name-$version
-fi
+tar zxvf $source1
 
 ### install
 cd $name-$version
