@@ -5,42 +5,35 @@
 
 ### variables ###
 name=st
-version=0.9
+version=0.9.1
 source1=$name-$version.tar.gz
-source2=st.desktop
-source3=st.wrapper
 patch1=terminfo.patch
+patch2=st-disable-bold-italic-fonts-0.8.2.diff
 config1=config.h
-URL_source1=http://dl.suckless.org/st/$name-$version.tar.gz
+URL_source1=http://dl.suckless.org/st/$source1
+URL_patch2=https://st.suckless.org/patches/disable_bold_italic_fonts/$patch2
 
 ### main routine ###
 if [ ! -f $source1 ]; then
-	wget $URL_source1
-fi
-if [ ! -f $source2 ]; then
-	echo '[Error] not found '$source2
-	exit 1
-fi
-if [ ! -f $source3 ]; then
-	echo '[Error] not found '$source3
-	exit 1
+    wget $URL_source1
 fi
 if [ ! -f $patch1 ]; then
-	echo '[Error] not found '$patch1
-	exit 1
+    echo '[Error] not found '$patch1
+    exit 1
 fi
 if [ ! -f $config1 ]; then
-	echo '[Error] not found '$config1
-	exit 1
+    echo '[Error] not found '$config1
+    exit 1
 fi
 
 if [ -d $name-$version ]; then
-	rm -rf $name-$version
+    rm -rf $name-$version
 fi
 tar zxvf $source1
 
 # patch
 patch --directory=$name-$version --strip=1 < $patch1
+patch --directory=$name-$version --strip=1 < $patch2
 
 # copy the config1 to source
 cp $config1 $name-$version/
@@ -59,13 +52,9 @@ make
 # install
 sudo porg -lp $name-$version \
 	'make PREFIX=/usr MANPREFIX=/usr/share/man install'
-sudo porg -lp+ $name-$version \
-	"cp -p ../$source2 /usr/share/applications/"
-sudo porg -lp+ $name-$version \
-	"install -m 755 ../$source3 /usr/bin/$source3"
 
 # Add st.wrapper to x-terminal-emulator
-if [ -f /usr/bin/update-alternatives ]; then
-    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/st.wrapper 10
-fi
+#if [ -f /usr/bin/update-alternatives ]; then
+#    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/st.wrapper 10
+#fi
 

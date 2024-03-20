@@ -1,2 +1,0 @@
-#!/bin/bash
-st -g 80x40 -e tmux
