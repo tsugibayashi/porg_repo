@@ -5,7 +5,8 @@
 
 ### variables ###
 name=st
-version=0.9.1
+version=0.9
+#version=0.9.1
 source1=$name-$version.tar.gz
 patch1=terminfo.patch
 patch2=st-disable-bold-italic-fonts-0.8.2.diff
