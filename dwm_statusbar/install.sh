@@ -5,7 +5,7 @@
 
 ### variables ###
 name=dwm_statusbar
-version=20240125
+version=20240323
 source1=${version}.tar.gz
 URL1=https://github.com/tsugibayashi/${name}/archive/refs/tags/${source1}
 
